@@ -8,6 +8,8 @@ download python (3.10+): https://www.python.org/downloads/release/python-3109/
 
 download git (windows): https://git-scm.com/download/win
 
+download selfcord:
+
     # Windows
     py -3.10 -m pip install git+https://github.com/dolfies/discord.py-self@renamed#egg=selfcord.py[voice]
 
