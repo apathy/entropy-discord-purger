@@ -53,3 +53,6 @@ make sure you have developer mode enabled to copy ids, if you don't already go t
 
     # purge messages between snowflakes (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
     .pinbetween channel snowflake1 snowflake2
+
+## dependencies
+https://github.com/dolfies/discord.py-self
