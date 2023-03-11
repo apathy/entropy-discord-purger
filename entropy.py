@@ -40,7 +40,7 @@ async def p(ctx, channel: Optional[int]):
                 channel_id = await bot.fetch_channel(channel)
                 if channel_id:
                     async for msg in channel_id.history(limit=None):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -48,13 +48,13 @@ async def p(ctx, channel: Optional[int]):
                 user = await bot.fetch_user(channel)
                 if user:
                     async for msg in user.dm_channel.history(limit=None):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
         else:
             async for msg in ctx.channel.history(limit=None):
-                if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                     counter += 1
                     print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                     await msg.delete()
@@ -73,7 +73,7 @@ async def pold(ctx, channel: Optional[int]):
                 channel_id = await bot.fetch_channel(channel)
                 if channel_id:
                     async for msg in channel_id.history(limit=None, oldest_first=True):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -81,13 +81,13 @@ async def pold(ctx, channel: Optional[int]):
                 user = await bot.fetch_user(channel)
                 if user:
                     async for msg in user.dm_channel.history(limit=None, oldest_first=True):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
         else:
             async for msg in ctx.channel.history(limit=None, oldest_first=True):
-                if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                     counter += 1
                     print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                     await msg.delete()
@@ -106,7 +106,7 @@ async def pbefore(ctx, channel: int, before: int):
                 channel_id = await bot.fetch_channel(channel)
                 if channel_id:
                     async for msg in channel_id.history(limit=None, before=selfcord.utils.snowflake_time(before)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -114,7 +114,7 @@ async def pbefore(ctx, channel: int, before: int):
                 user = await bot.fetch_user(channel)
                 if user:
                     async for msg in user.dm_channel.history(limit=None, before=selfcord.utils.snowflake_time(before)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -133,7 +133,7 @@ async def pafter(ctx, channel: int, after: int):
                 channel_id = await bot.fetch_channel(channel)
                 if channel_id:
                     async for msg in channel_id.history(limit=None, after=selfcord.utils.snowflake_time(after)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -141,7 +141,7 @@ async def pafter(ctx, channel: int, after: int):
                 user = await bot.fetch_user(channel)
                 if user:
                     async for msg in user.dm_channel.history(limit=None, after=selfcord.utils.snowflake_time(after)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -160,7 +160,7 @@ async def pinbetween(ctx, channel: int, before: int, after: int):
                 channel_id = await bot.fetch_channel(channel)
                 if channel_id:
                     async for msg in channel_id.history(limit=None, before=selfcord.utils.snowflake_time(before), after=selfcord.utils.snowflake_time(after)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
@@ -168,7 +168,7 @@ async def pinbetween(ctx, channel: int, before: int, after: int):
                 user = await bot.fetch_user(channel)
                 if user:
                     async for msg in user.dm_channel.history(limit=None, before=selfcord.utils.snowflake_time(before), after=selfcord.utils.snowflake_time(after)):
-                        if msg.author == ctx.author and (msg.type == selfcord.MessageType.default or msg.type == selfcord.MessageType.reply or msg.type == selfcord.MessageType.pins_add):
+                        if msg.author == ctx.author and msg.type in (selfcord.MessageType.default, selfcord.MessageType.reply, selfcord.MessageType.pins_add):
                             counter += 1
                             print(f'[{counter} deleted] {msg.content or "unknown msg"}')
                             await msg.delete()
