@@ -22,7 +22,7 @@
 
 ## install
 
-download python (3.10+): https://www.python.org/downloads/release/python-3109/
+download python (3.10+): https://www.python.org/downloads/release/python-31011/
 
 download git (windows): https://git-scm.com/download/win
 
