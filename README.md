@@ -1,6 +1,24 @@
 # entropy
 
-## made this for me, if you'd like to improve anything feel free to do so
+## made this for me, if you'd like to improve anything feel free to do so. cmds and install instructions are down below
+
+## cmds
+    # make sure you have developer mode enabled to copy ids, if you don't already go to settings > advanced > enable developer mode
+    
+    # purge messages from bottom to top
+    .p (will use current channel) OR .p snowflake (dm/group/channel)
+
+    # purge messages from top to bottom
+    .pold (will use current channel) OR .pold snowflake (dm/group/channel)
+
+    # purge messages before snowflake (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
+    .pbefore channel snowflake
+
+    # purge messages after snowflake (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
+    .pafter channel snowflake
+
+    # purge messages between snowflakes (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
+    .pinbetween channel snowflake1 snowflake2
 
 ## install
 
@@ -36,25 +54,6 @@ once you're done editing, **start entropy**:
 
     # Linux/macOS
     python3.10 entropy.py
-
-make sure you have developer mode enabled to copy ids, if you don't already go to **settings > advanced > enable developer mode**
-
-## cmds
-
-    # purge messages from bottom to top
-    .p (will use current channel) OR .p snowflake (dm/group/channel)
-
-    # purge messages from top to bottom
-    .pold (will use current channel) OR .pold snowflake (dm/group/channel)
-
-    # purge messages before snowflake (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
-    .pbefore channel snowflake
-
-    # purge messages after snowflake (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
-    .pafter channel snowflake
-
-    # purge messages between snowflakes (message id, e.g: 1049011454973579274) - will not delete the message id used if it's yours
-    .pinbetween channel snowflake1 snowflake2
 
 ## dependencies
 https://github.com/dolfies/discord.py-self
