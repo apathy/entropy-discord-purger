@@ -4,15 +4,15 @@ from selfcord.ext import commands
 from typing import Optional
 
 # token
-token = 'token_here'
+ash_is_a_skid = 'token_here'
 
 bot = commands.Bot(command_prefix='.', self_bot=True)
 
-print('entropy started, waiting to login')
+print('entropy started, waiting to login - ash is a skid')
 
 @bot.event
 async def on_ready():
-    print(f'logged in as {bot.user}')
+    print(f'logged in as {bot.user} - ash is a skid')
 
 @bot.event
 async def on_command_error(error):
@@ -94,4 +94,4 @@ async def pafter(ctx, channel: int, after: int):
 async def pinbetween(ctx, channel: int, before: int, after: int):
     await purge_msgs(ctx, channel, before=selfcord.utils.snowflake_time(before), after=selfcord.utils.snowflake_time(after))
 
-bot.run(token)
+bot.run(ash_is_a_skid)
